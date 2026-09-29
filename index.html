@@ -86,7 +86,6 @@ tr.total-row td{border-top:3px solid var(--secondary);}
 .btn-bacaan{background:rgba(42,157,143,0.12);color:var(--accent);border:1.5px solid var(--accent);}
 .btn-bacaan:hover{background:var(--accent);color:#fff;}
 
-/* ===== PENGUMPULAN TUGAS ===== */
 .tugas-card{
   max-width:820px; margin:0 auto;
   background:linear-gradient(135deg,var(--white),#f2f9f8);
@@ -136,7 +135,6 @@ tr.total-row td{border-top:3px solid var(--secondary);}
   position:relative; z-index:1;
 }
 
-/* ===== TEST ===== */
 .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;max-width:820px;margin:0 auto;}
 .test-card{border-radius:var(--radius);padding:42px 30px;text-align:center;color:#fff;box-shadow:var(--shadow);transition:0.3s;text-decoration:none;display:block;}
 .test-card:hover{transform:translateY(-8px) scale(1.02);}
@@ -146,7 +144,6 @@ tr.total-row td{border-top:3px solid var(--secondary);}
 .test-card h3{font-size:1.4rem;margin-bottom:8px;}
 .test-card p{font-size:0.9rem;opacity:0.9;}
 
-/* ===== MODAL LINK BELUM DIATUR ===== */
 .nd-modal{position:fixed;inset:0;background:rgba(8,36,63,0.85);display:none;z-index:2050;padding:20px;}
 .nd-modal.open{display:flex;align-items:center;justify-content:center;}
 .nd-box{background:#fff;width:min(520px,100%);border-radius:20px;padding:36px 30px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,0.5);}
@@ -161,7 +158,6 @@ tr.total-row td{border-top:3px solid var(--secondary);}
 .nd-btn.utama{background:linear-gradient(135deg,var(--secondary),var(--secondary-dark));color:var(--primary-dark);}
 .nd-btn.tutup{background:#e9ecef;color:#495057;}
 
-/* ===== FAB + PANEL KELOLA LINK ===== */
 .fab-settings{position:fixed;bottom:22px;right:22px;z-index:1500;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--secondary),var(--secondary-dark));color:var(--primary-dark);border:none;font-size:1.5rem;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,0.35);transition:0.3s;}
 .fab-settings:hover{transform:rotate(120deg) scale(1.1);}
 .lm-modal{position:fixed;inset:0;background:rgba(8,36,63,0.82);display:none;z-index:2100;padding:14px;}
@@ -394,7 +390,7 @@ footer strong{color:var(--secondary);}
       <h3>LK 01 — Standar Nasional Pendidikan</h3>
       <p class="sub">Analisis implementasi SNP di satuan pendidikan</p>
       <div class="materi-links">
-        <a class="btn-link btn-tayang" href="#" data-link="lk01" data-judul="LK 01">📝 Buka Lembar Kerja</a>
+        <a class="btn-link btn-tayang" href="https://docs.google.com/document/d/1Mebzg_g7QxjamkEUWBNj2ZD_omA3vHaN/edit?usp=drive_link&ouid=113029159447701156309&rtpof=true&sd=true" target="_blank" rel="noopener">📝 Buka Lembar Kerja</a>
       </div>
     </div>
     <div class="materi-card reveal">
@@ -402,7 +398,7 @@ footer strong{color:var(--secondary);}
       <h3>LK 02 — Analisis Indikator Prioritas</h3>
       <p class="sub">Menentukan indikator prioritas dari Rapor Pendidikan</p>
       <div class="materi-links">
-        <a class="btn-link btn-tayang" href="#" data-link="lk02" data-judul="LK 02">📝 Buka Lembar Kerja</a>
+        <a class="btn-link btn-tayang" href="https://docs.google.com/document/d/1anAaz3GlRGjKh981JFZsMnoTO8uQQywY/edit#heading=h.gjkv15cmwe4n" target="_blank" rel="noopener">📝 Buka Lembar Kerja</a>
       </div>
     </div>
     <div class="materi-card reveal">
@@ -410,7 +406,7 @@ footer strong{color:var(--secondary);}
       <h3>LK 03 — Siklus SPMI</h3>
       <p class="sub">Menyusun siklus SPMI di satuan pendidikan</p>
       <div class="materi-links">
-        <a class="btn-link btn-tayang" href="#" data-link="lk03" data-judul="LK 03">📝 Buka Lembar Kerja</a>
+        <a class="btn-link btn-tayang" href="https://docs.google.com/document/d/14ZbsKZC8dnxmRv6-0hKQ4a3yuP_BfkRJ/edit" target="_blank" rel="noopener">📝 Buka Lembar Kerja</a>
       </div>
     </div>
   </div>
@@ -468,7 +464,7 @@ footer strong{color:var(--secondary);}
     <div class="nd-steps">
       <strong>Pasang dalam 2 menit:</strong>
       <ol>
-        <li>Buka file Google Slides/Docs/Form-nya dari akun Anda</li>
+        <li>Buka file Google-nya dari akun Anda</li>
         <li>Blok alamat di address bar → <b>Ctrl+C</b></li>
         <li>Klik tombol di bawah → paste → <b>Simpan</b> ✅</li>
       </ol>
@@ -515,20 +511,15 @@ footer strong{color:var(--secondary);}
 
 <script>
 /* ================================================================
-   PUSAT LINK — link utama sudah terpasang langsung di HTML.
-   Yang masih kosong: LK 01–03 dan Post-Test (isi lewat panel ⚙️).
+   PUSAT LINK — hanya Post-Test yang belum diisi.
+   Kirimkan link Post-Test, lalu tempel di bawah ini ATAU
+   isi lewat panel ⚙️ di pojok kanan bawah halaman.
    ================================================================ */
 let LINK = {
-  lk01: "",
-  lk02: "",
-  lk03: "",
-  postTest: ""
+  postTest: ""   // ← tempel link Google Form Post-Test di sini
 };
 
 const FIELDS = [
-  {key:'lk01',     icon:'📝', label:'Lembar Kerja — LK 01'},
-  {key:'lk02',     icon:'📝', label:'Lembar Kerja — LK 02'},
-  {key:'lk03',     icon:'📝', label:'Lembar Kerja — LK 03'},
   {key:'postTest', icon:'✅', label:'Google Form — Post-Test'}
 ];
 
@@ -591,7 +582,7 @@ function perbaruiStatus(key){
   const st = document.getElementById('st_'+key);
   const ts = document.getElementById('ts_'+key);
   if (!val) { st.textContent='⬜'; ts.classList.remove('aktif'); return; }
-  if (/^https?:\/\//.test(val) || /^[a-zA-Z0-9_-]{25,}$/.test(val)) {
+  if (/^https?:\/\//.test(val)) {
     st.textContent='✅';
     ts.href = val;
     ts.classList.add('aktif');
