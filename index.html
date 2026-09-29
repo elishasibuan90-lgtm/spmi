@@ -86,6 +86,57 @@ tr.total-row td{border-top:3px solid var(--secondary);}
 .btn-bacaan{background:rgba(42,157,143,0.12);color:var(--accent);border:1.5px solid var(--accent);}
 .btn-bacaan:hover{background:var(--accent);color:#fff;}
 
+/* ===== PENGUMPULAN TUGAS ===== */
+.tugas-card{
+  max-width:820px; margin:0 auto;
+  background:linear-gradient(135deg,var(--white),#f2f9f8);
+  border:2px solid var(--accent);
+  border-radius:24px; padding:50px 40px; text-align:center;
+  box-shadow:0 20px 50px rgba(42,157,143,0.2);
+  position:relative; overflow:hidden; transition:0.3s;
+}
+.tugas-card::before{
+  content:''; position:absolute; top:-40px; right:-40px;
+  width:160px; height:160px; border-radius:50%;
+  background:rgba(42,157,143,0.08);
+}
+.tugas-card::after{
+  content:''; position:absolute; bottom:-50px; left:-50px;
+  width:200px; height:200px; border-radius:50%;
+  background:rgba(244,168,37,0.08);
+}
+.tugas-icon{
+  width:90px; height:90px; margin:0 auto 20px;
+  border-radius:24px; display:flex; align-items:center; justify-content:center;
+  font-size:2.8rem; background:linear-gradient(135deg,var(--accent),#1d7268);
+  box-shadow:0 12px 30px rgba(42,157,143,0.4);
+  position:relative; z-index:1;
+}
+.tugas-card h3{color:var(--primary); font-size:clamp(1.3rem,3vw,1.8rem); font-weight:800; margin-bottom:10px; position:relative; z-index:1;}
+.tugas-card p{color:#495057; font-size:0.95rem; max-width:560px; margin:0 auto 26px; position:relative; z-index:1;}
+.btn-tugas{
+  display:inline-flex; align-items:center; gap:12px;
+  background:linear-gradient(135deg,var(--accent),#1d7268);
+  color:#fff; font-family:'Poppins',sans-serif;
+  font-size:1.05rem; font-weight:700;
+  padding:16px 40px; border:none; border-radius:50px;
+  text-decoration:none; box-shadow:0 10px 30px rgba(42,157,143,0.45);
+  transition:0.3s; position:relative; z-index:1;
+  animation:tugasPulse 2.4s ease infinite;
+}
+.btn-tugas:hover{transform:translateY(-4px) scale(1.04); box-shadow:0 16px 42px rgba(42,157,143,0.6);}
+@keyframes tugasPulse{
+  0%,100%{box-shadow:0 10px 30px rgba(42,157,143,0.45);}
+  50%{box-shadow:0 10px 45px rgba(42,157,143,0.8);}
+}
+.tugas-note{
+  display:inline-block; margin-top:20px;
+  font-size:0.78rem; color:#6c757d;
+  background:#eef2f7; border-radius:20px; padding:6px 16px;
+  position:relative; z-index:1;
+}
+
+/* ===== TEST ===== */
 .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;max-width:820px;margin:0 auto;}
 .test-card{border-radius:var(--radius);padding:42px 30px;text-align:center;color:#fff;box-shadow:var(--shadow);transition:0.3s;text-decoration:none;display:block;}
 .test-card:hover{transform:translateY(-8px) scale(1.02);}
@@ -95,6 +146,7 @@ tr.total-row td{border-top:3px solid var(--secondary);}
 .test-card h3{font-size:1.4rem;margin-bottom:8px;}
 .test-card p{font-size:0.9rem;opacity:0.9;}
 
+/* ===== MODAL LINK BELUM DIATUR ===== */
 .nd-modal{position:fixed;inset:0;background:rgba(8,36,63,0.85);display:none;z-index:2050;padding:20px;}
 .nd-modal.open{display:flex;align-items:center;justify-content:center;}
 .nd-box{background:#fff;width:min(520px,100%);border-radius:20px;padding:36px 30px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,0.5);}
@@ -109,6 +161,7 @@ tr.total-row td{border-top:3px solid var(--secondary);}
 .nd-btn.utama{background:linear-gradient(135deg,var(--secondary),var(--secondary-dark));color:var(--primary-dark);}
 .nd-btn.tutup{background:#e9ecef;color:#495057;}
 
+/* ===== FAB + PANEL KELOLA LINK ===== */
 .fab-settings{position:fixed;bottom:22px;right:22px;z-index:1500;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--secondary),var(--secondary-dark));color:var(--primary-dark);border:none;font-size:1.5rem;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,0.35);transition:0.3s;}
 .fab-settings:hover{transform:rotate(120deg) scale(1.1);}
 .lm-modal{position:fixed;inset:0;background:rgba(8,36,63,0.82);display:none;z-index:2100;padding:14px;}
@@ -149,12 +202,14 @@ footer strong{color:var(--secondary);}
   .hero{background-attachment:scroll;}
   .nd-modal,.lm-modal{padding:8px;}
   .lm-tes{display:none;}
+  .tugas-card{padding:38px 22px;}
 }
 @media (max-width:480px){
   .nav-brand span{display:none;}
   .hero-logo{width:90px;height:90px;}
   .btn-start{padding:14px 34px;font-size:1rem;}
   .fab-settings{bottom:16px;right:16px;width:50px;height:50px;}
+  .btn-tugas{padding:14px 30px;font-size:0.95rem;}
 }
 @media (min-width:1600px){
   body{font-size:18px;}
@@ -178,6 +233,7 @@ footer strong{color:var(--secondary);}
     <li><a href="#struktur">Struktur</a></li>
     <li><a href="#materi">Materi</a></li>
     <li><a href="#lk">Lembar Kerja</a></li>
+    <li><a href="#tugas">Tugas</a></li>
     <li><a href="#test">Test</a></li>
   </ul>
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
@@ -360,6 +416,26 @@ footer strong{color:var(--secondary);}
   </div>
 </section>
 
+<!-- ============ PENGUMPULAN TUGAS ============ -->
+<section id="tugas" style="background:#eef2f7;">
+  <div class="section-header reveal">
+    <span class="section-tag">Upload</span>
+    <h2>Tempat Pengumpulan Tugas</h2>
+    <p>Kumpulkan hasil Lembar Kerja (LK), RTL, dan tugas bimtek Anda di folder berikut.</p>
+    <div class="divider"></div>
+  </div>
+  <div class="tugas-card reveal">
+    <div class="tugas-icon">📂</div>
+    <h3>Folder Pengumpulan Tugas</h3>
+    <p>Unggah file tugas Anda (LK 01 – LK 03, RTL, dan produk lainnya) ke folder Google Drive resmi Bimtek Penguatan SPMI. Beri nama file jelas, contoh: <strong>LK01_NamaSekolah.pdf</strong></p>
+    <a class="btn-tugas" href="https://drive.google.com/drive/folders/1acs4x8LfVllZOrS3Wif_XjSLwP98Udsj?usp=sharing" target="_blank" rel="noopener">
+      📤 Buka Folder Pengumpulan Tugas
+    </a>
+    <br>
+    <span class="tugas-note">🔗 Link langsung mengarah ke Google Drive</span>
+  </div>
+</section>
+
 <section id="test" style="background:linear-gradient(135deg,#08243f,#0d3b66);">
   <div class="section-header reveal">
     <span class="section-tag" style="background:rgba(244,168,37,0.18); color:var(--secondary);">Evaluasi</span>
@@ -383,7 +459,7 @@ footer strong{color:var(--secondary);}
   </div>
 </section>
 
-<!-- MODAL "LINK BELUM DIATUR" -->
+<!-- MODAL LINK BELUM DIATUR -->
 <div class="nd-modal" id="ndModal">
   <div class="nd-box">
     <div class="nd-icon">🔗</div>
@@ -406,7 +482,6 @@ footer strong{color:var(--secondary);}
 
 <button class="fab-settings" onclick="bukaPengaturan()" title="Kelola Link (Admin)">⚙️</button>
 
-<!-- PANEL KELOLA LINK -->
 <div class="lm-modal" id="lmModal">
   <div class="lm-box">
     <div class="lm-head">
@@ -440,37 +515,21 @@ footer strong{color:var(--secondary);}
 
 <script>
 /* ================================================================
-   PUSAT LINK — sudah terisi sesuai link yang Anda kirim.
-   Jika ada yang masih error, perbaiki lewat panel ⚙️.
+   PUSAT LINK — link utama sudah terpasang langsung di HTML.
+   Yang masih kosong: LK 01–03 dan Post-Test (isi lewat panel ⚙️).
    ================================================================ */
 let LINK = {
-  tayangSPMI:      "https://docs.google.com/presentation/d/1pl7jKQYhlxK8UnT8pBWFah1til2rvcGs/edit?slide=id.p1#slide=id.p1",
-  tayangMateri1:   "https://docs.google.com/presentation/d/1Jhh3Pyk8v5B6kRNzhgeUvaommcbUMqkq8Q9huLND5oc/edit?slide=id.p10#slide=id.p10",
-  tayangMateri2:   "https://docs.google.com/presentation/d/18EFU5O7sxeaPxoVrdwv-XEcHgR-40IKLYJWdJhNLLHM/edit?slide=id.p3#slide=id.p3",
-  tayangMateri3:   "https://docs.google.com/presentation/d/1tuAde4TzpIeP70I3cfj6c30Wrbzvr05tMXUlN0xzB-o/edit?slide=id.p3#slide=id.p3",
-  tayangMateri4:   "https://docs.google.com/presentation/d/1IotoBoA9xeDnw5lK64PcDVOuqslh_cj2KcO-ryikdUE/edit?slide=id.p1#slide=id.p1",
-  folderMateri1:   "https://drive.google.com/drive/folders/1DGqojoUzgmJ2ho5sjjJlObDks9bvPky4?usp=drive_link",
-  permendikdasmen: "https://drive.google.com/file/d/1VuHqc92dXcba9_1GoC9DiZvquoDBO1hl/view?usp=drive_link",
-  lk01: "",   // ← isi lewat panel ⚙️ (link LK 01)
-  lk02: "",   // ← isi lewat panel ⚙️ (link LK 02)
-  lk03: "",   // ← isi lewat panel ⚙️ (link LK 03)
-  preTest:  "https://forms.gle/qPzZLnXSeQHD6WXp6",
-  postTest: "" // ← kirim link Post-Test, lalu isi lewat panel ⚙️
+  lk01: "",
+  lk02: "",
+  lk03: "",
+  postTest: ""
 };
 
 const FIELDS = [
-  {key:'tayangSPMI',      icon:'📊', label:'Bahan Tayang — Tata Kelola SPMI'},
-  {key:'tayangMateri1',   icon:'📊', label:'Bahan Tayang — Standar Nasional Pendidikan'},
-  {key:'tayangMateri2',   icon:'📊', label:'Bahan Tayang — Sistem Penjaminan Mutu Pendidikan'},
-  {key:'tayangMateri3',   icon:'📊', label:'Bahan Tayang — Pemanfaatan Rapor Pendidikan'},
-  {key:'tayangMateri4',   icon:'📊', label:'Bahan Tayang — SPMI 25 Agustus 2026'},
-  {key:'folderMateri1',   icon:'📖', label:'Bahan Bacaan — Folder Materi 1 (Drive)'},
-  {key:'permendikdasmen', icon:'📜', label:'Bahan Bacaan — Permendikdasmen No. 21/2026'},
-  {key:'lk01',            icon:'📝', label:'Lembar Kerja — LK 01'},
-  {key:'lk02',            icon:'📝', label:'Lembar Kerja — LK 02'},
-  {key:'lk03',            icon:'📝', label:'Lembar Kerja — LK 03'},
-  {key:'preTest',         icon:'📝', label:'Google Form — Pre-Test'},
-  {key:'postTest',        icon:'✅', label:'Google Form — Post-Test'}
+  {key:'lk01',     icon:'📝', label:'Lembar Kerja — LK 01'},
+  {key:'lk02',     icon:'📝', label:'Lembar Kerja — LK 02'},
+  {key:'lk03',     icon:'📝', label:'Lembar Kerja — LK 03'},
+  {key:'postTest', icon:'✅', label:'Google Form — Post-Test'}
 ];
 
 const LS_KEY = 'bimtekLinkOverride';
@@ -478,7 +537,6 @@ try { Object.assign(LINK, JSON.parse(localStorage.getItem(LS_KEY) || '{}')); } c
 
 const ambilLink = k => (LINK[k] || '').trim();
 
-/* Pasang href + target="_blank" ke tombol yang masih pakai data-link */
 function terapkanSemuaLink(){
   document.querySelectorAll('[data-link]').forEach(el => {
     const val = ambilLink(el.dataset.link);
@@ -490,7 +548,6 @@ function terapkanSemuaLink(){
 }
 terapkanSemuaLink();
 
-/* Jika link belum diisi → tampilkan panduan */
 document.querySelectorAll('[data-link]').forEach(el => {
   el.addEventListener('click', e => {
     if (!ambilLink(el.dataset.link)) {
@@ -504,7 +561,6 @@ document.querySelectorAll('[data-link]').forEach(el => {
 function tutupBelumDiatur(){ document.getElementById('ndModal').classList.remove('open'); document.body.style.overflow=''; }
 document.getElementById('ndModal').addEventListener('click', e => { if (e.target.id==='ndModal') tutupBelumDiatur(); });
 
-/* ===== Panel Kelola Link ===== */
 function bukaPengaturan(){
   tutupBelumDiatur();
   const list = document.getElementById('lmList');
@@ -537,7 +593,7 @@ function perbaruiStatus(key){
   if (!val) { st.textContent='⬜'; ts.classList.remove('aktif'); return; }
   if (/^https?:\/\//.test(val) || /^[a-zA-Z0-9_-]{25,}$/.test(val)) {
     st.textContent='✅';
-    ts.href = /^https?:\/\//.test(val) ? val : val;
+    ts.href = val;
     ts.classList.add('aktif');
   } else { st.textContent='⚠️'; ts.classList.remove('aktif'); }
 }
@@ -549,7 +605,7 @@ function simpanLocal(){
   try { localStorage.setItem(LS_KEY, JSON.stringify(data)); } catch(e) {}
   terapkanSemuaLink();
   tutupPengaturan();
-  alert('✅ Link tersimpan & aktif di browser ini!\n\nSekarang klik tombol materi — langsung terbuka di tab baru.\n\nCatatan: untuk LK 01–03 dan Post-Test, link tetap perlu ditempel permanen di kode HTML (bagian PUSAT LINK) agar aktif untuk semua pengunjung.');
+  alert('✅ Link tersimpan & aktif di browser ini!\n\nCatatan: agar aktif untuk SEMUA pengunjung, tempel link secara permanen di kode HTML (bagian PUSAT LINK).');
 }
 
 function resetLink(){
@@ -558,7 +614,6 @@ function resetLink(){
   location.reload();
 }
 
-/* ===== Umum ===== */
 function toggleMenu(){ document.getElementById('navLinks').classList.toggle('open'); }
 document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
 document.addEventListener('keydown', e => { if (e.key==='Escape'){ tutupBelumDiatur(); tutupPengaturan(); } });
